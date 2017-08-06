@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>excel测试</title>
+</head>
+<body>
+<p>上传excel文件</p>
+<form action="/upload/" method="post" name="upload" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    {% csrf_token %}
+    <input type="submit"><br>
+</form>
+
+<div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <p><a href="/excel_request/">执行测试</a></p>
+    </ul>
+</div>
+<div id="result-zone" style="float:left">
+    <p>响应结果</p>
+    <div id="result">
+        <p>{{ message }}</p>
+    </div>
+</div>
+</body>
+</html>
