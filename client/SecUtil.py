@@ -9,7 +9,7 @@ class EnsafeDes(object):
         self.p1 = "AN"
         self.p2 = "MS"
         self.key = des(self.rankey, "\0\0\0\0\0\0\0\0", pad=None, padmode=PAD_PKCS5)
-
+        
     def ensec(self, pre):
         ensec_data = self.key.encrypt(pre)
         return ensec_data
@@ -21,8 +21,10 @@ class EnsafeDes(object):
 
 class EnsafeRsa(object):
     def __init__(self):
+        #此处填入私钥的路径
         with open("d://code//private.pem", "rb") as f:
             self.pridata = f.read()
+        #此处填入公钥的路径
         with open("d://code//public.pem", "rb") as f:
             self.pubdata = f.read()
 
